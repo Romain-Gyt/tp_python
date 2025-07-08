@@ -7,5 +7,4 @@ for ligne in range(1, 9):
         total_grains += grains
         grains *= 2
 
-print("\n----------------------------------")
 print(f"Total des grains de riz : {total_grains}")
