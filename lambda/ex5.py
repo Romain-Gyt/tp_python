@@ -1,3 +1,6 @@
+from collections import defaultdict
+from functools import reduce
+
 eleves = [
     ("Karim Benali", 11),
     ("Ines Dubois", 9),
@@ -41,10 +44,16 @@ eleves = [
     ("Manon Tessier", 1)
 ]
 
-# utilise sorted pour trier cette liste par note croissante
-# utilise sorted pour trier cette liste par ordre alphabetique du nom de famille
+# utilise cette liste pour créer un dictionnaire où la clé est la note et la valeur la liste des "prénom nom" ayant eu cette note
+# exemple {..., 19 : ["Victor Perrin", "Camille Robert"]
 
-note_croissante = list(sorted(eleves, key = lambda x : x[1]))
-print(note_croissante)
-ordre_alphabetique = list(sorted(eleves, key = lambda x : x[0].split()[1][-1]))
-print(ordre_alphabetique)
+
+
+eleves_par_note =  dict()
+
+for nom, note in eleves:
+    eleves_par_note[note]=nom
+
+
+for note in sorted(eleves_par_note):
+    print(f"{note} : {eleves_par_note[note]}")
