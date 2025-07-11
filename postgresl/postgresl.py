@@ -10,7 +10,7 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-#
+
 cursor.execute("SELECT COUNT(*) FROM pingouins")
 print("Nombre total de pingouins :", cursor.fetchone()[0])
 
